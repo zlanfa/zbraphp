@@ -10,29 +10,17 @@
             </div>
             <div class="list-group">
                 <span href="#" class="list-group-item active bg-success">
-                    Submenu
+                    Link แนะนำ
                     <span class="pull-right" id="slide-submenu">
                         <i class="fa fa-times"></i>
                     </span>
                 </span>
-                <a href="#" class="list-group-item">
-                    <i class="fa fa-comment-o"></i> Lorem ipsum
+                <?php foreach($categories as $it) { ?>
+                <a href="/<?= $it->categoryID ?>" class="list-group-item">
+                    <i class="fa fa-comment-o"></i> <?= $it->categoryName ?>
                 </a>
-                <a href="#" class="list-group-item">
-                    <i class="fa fa-search"></i> Lorem ipsum
-                </a>
-                <a href="#" class="list-group-item">
-                    <i class="fa fa-user"></i> Lorem ipsum
-                </a>
-                <a href="#" class="list-group-item">
-                    <i class="fa fa-folder-open-o"></i> Lorem ipsum <span class="badge">14</span>
-                </a>
-                <a href="#" class="list-group-item">
-                    <i class="fa fa-bar-chart-o"></i> Lorem ipsumr <span class="badge">14</span>
-                </a>
-                <a href="#" class="list-group-item">
-                    <i class="fa fa-envelope"></i> Lorem ipsum
-                </a>
+                <?php } ?>
+                
             </div>        
         </div>
         <div class="col">
