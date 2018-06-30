@@ -7,37 +7,47 @@
 
 
 
-<div class="container no-padding mt-4">
+<div class="container mt-4">
 	<footer>
-		<div class="col-6">
-			<div class="row">
-				<div style="background-color:#CCC;width:90%;height:100px;"></div>
-				<img src="assets/images/logo.png" alt="logo" />
+		<div class="row">
+			<div class="col">
+				<div class="row">
+					<div style="background-color:#CCC;width:90%;height:100px;"></div>
+					<img src="assets/images/logo.png" alt="logo" />
+				</div>
+				<div class="row">
+					Feel free to contact us via phone,email or just send us mail.
+				</div>
+				<div class="row">
+					17 Princess Road, London, Greater London NW1 8JR, UK 1-888-8MEDIA (1-888-892-9953) 
+				</div>
+				<div class="row social-icons">
+					<div ><h2>Get In Touch</h2></div>
+					<div>
+						<ul>
+							<li><a href="#" class="fa fa-facebook"></a></li>
+							<li><a href="#" class="fa fa-twitter"></a></li>
+							<li><a href="#" class="fa fa-pinterest"></a></li>
+							<li><a href="#" class="fa fa-linkedin"></a></li>
+							<li><a href="#" class="fa fa-stumbleupon"></a></li>
+							<li><a href="#" class="fa fa-dribbble"></a></li>
+							<li><a href="#" class="fa fa-vk"></a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
-			<div class="row">
-				Feel free to contact us via phone,email or just send us mail.
-			</div>
-			<div class="row">
-				17 Princess Road, London, Greater London NW1 8JR, UK 1-888-8MEDIA (1-888-892-9953) 
-			</div>
-			<div class="row social-icons">
-				<div ><h2>Get In Touch</h2></div>
-				<div>
-					<ul>
-						<li><a href="#" class="fa fa-facebook"></a></li>
-						<li><a href="#" class="fa fa-twitter"></a></li>
-						<li><a href="#" class="fa fa-pinterest"></a></li>
-						<li><a href="#" class="fa fa-linkedin"></a></li>
-						<li><a href="#" class="fa fa-stumbleupon"></a></li>
-						<li><a href="#" class="fa fa-dribbble"></a></li>
-						<li><a href="#" class="fa fa-vk"></a></li>
-					</ul>
+			<div class="col">
+				<div class="col">
+					hot link
+				</div>
+				<div class="col">
+					link ข้างเคียง
+				</div>
+				<div class="col">
+					mobile application
 				</div>
 			</div>
 		</div>
-		<div class="col-2"></div>
-		<div class="col-2"></div>
-		<div class="col-2"></div>
 	</footer>
 </div>
 

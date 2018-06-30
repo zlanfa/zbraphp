@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8080/dookonka/';
+$config['base_url'] = 'http://localhost:8080/dookonka';
 
 /*
 |--------------------------------------------------------------------------
@@ -521,3 +521,16 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+/*
+|--------------------------------
+| Global variable
+|--------------------------------
+|
+| you can add config here 
+
+*/
+
+$config['limit_item'] = 40;
+
