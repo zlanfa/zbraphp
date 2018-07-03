@@ -7,9 +7,10 @@ class home extends CI_Controller {
        
         //load model data
         $this->load->model('Categories_model');
+        $this->load->model('Posts_model');
         $data['categories'] = $this->Categories_model->get_categories(0);
-
-
+        $data['posts'] = $this->Posts_model->get_post(0);
+        
         //load header
         $this->load->view('header/header', $data, FALSE);
 
@@ -21,7 +22,7 @@ class home extends CI_Controller {
         //load content body
         $this->load->view('content/menu-advert', $data['categories'], FALSE);
         //load mix content 
-        $this->load->view('content/mix-content', $data, FALSE);
+        $this->load->view('content/mix-content', $data['posts'], FALSE);
         
 
         //load footer
