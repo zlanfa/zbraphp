@@ -12,6 +12,12 @@ class home extends CI_Controller {
 
         //load header
         $this->load->view('header/header', $data, FALSE);
+
+
+        $this->load->view('content/product', $data, FALSE);
+        $this->load->view('content/comment', $data, FALSE);
+        
+        /*
         //load content body
         $this->load->view('content/menu-advert', $data['categories'], FALSE);
         //load mix content 
@@ -20,7 +26,7 @@ class home extends CI_Controller {
 
         //load footer
         $this->load->view('footer/footer', $data, FALSE);
-        
+        */
         
     }
 
