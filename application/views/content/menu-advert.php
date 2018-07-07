@@ -9,19 +9,16 @@
                 <span class="icon-bar"></span>
             </div>
             <div class="list-group">
-                <span href="#" class="list-group-item active bg-success">
-                    Link แนะนำ
-                    <span class="pull-right" id="slide-submenu">
-                        <i class="fa fa-times"></i>
-                    </span>
+                <span href="#" class="list-group-item active bg-success" style="border-color:green;">
+                    แนะนำ
                 </span>
-                <?php foreach($categories as $it) { ?>
-                <a href="/<?= $it->categoryID ?>" class="list-group-item">
-                    <i class="fa fa-comment-o"></i> <?= $it->categoryName ?>
+                <?php foreach ($categories as $it) {?>
+                <a href="/<?=$it->categoryID?>" class="list-group-item">
+                    <i class="fa fa-comment-o"></i> <?=$it->categoryName?>
                 </a>
-                <?php } ?>
-                
-            </div>        
+                <?php }?>
+
+            </div>
         </div>
         <div class="col">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

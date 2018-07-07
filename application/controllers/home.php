@@ -1,36 +1,36 @@
 <?php
 
-class home extends CI_Controller {
+class home extends CI_Controller
+{
 
     public function index()
     {
-       
+
         //load model data
         $this->load->model('Categories_model');
         $this->load->model('Posts_model');
+
         $data['categories'] = $this->Categories_model->get_categories(0);
         $data['posts'] = $this->Posts_model->get_post(0);
-        
-        //load header
-        $this->load->view('header/header', $data, FALSE);
 
+        $this->load->view('header/header', $data, false); //load header
+        $this->load->view('content/menu-advert', $data['categories'], false); //load content body
+        $this->load->view('content/mix-content', $data['posts'], false); //load mix content
+        $this->load->view('footer/footer', $data, false); //load footer
 
-        $this->load->view('content/product', $data, FALSE);
-        $this->load->view('content/comment', $data, FALSE);
-        
-        /*
-        //load content body
-        $this->load->view('content/menu-advert', $data['categories'], FALSE);
-        //load mix content 
-        $this->load->view('content/mix-content', $data['posts'], FALSE);
-        
+    }
 
-        //load footer
-        $this->load->view('footer/footer', $data, FALSE);
-        */
-        
+    public function product($id)
+    {
+
+        $this->load->model('Posts_model');
+        $data['posts'] = $this->Posts_model->get_post($id);
+        $data['postImage'] = $this->Posts_model->get_post_image($id);
+        $data['comment'] = $this->Posts_model->get_post_comment($id, 'asc');
+        $this->load->view('header/header', $data, false); //load header
+        $this->load->view('content/product', $data, false);
+        $this->load->view('content/comment', $data, false);
+
     }
 
 }
-
-
