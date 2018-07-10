@@ -12,4 +12,15 @@ class register extends CI_Controller
         $this->load->view('footer/footer', $data, false); //load footer
     }
 
+    public function login()
+    {
+
+        $username = 'admin9';
+        $password = '9999';
+        $this->load->model('Authen_model');
+
+        $temp = $this->Authen_model->login($username, $password);
+        var_dump($temp);
+    }
+
 }
