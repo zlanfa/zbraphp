@@ -55,35 +55,46 @@
 </style>
 
 
+
 <div class="login-form">
-    <form action="#" method="post">
+    <?php
+if (isset($error)) {
+    echo '<div class="alert alert-danger" role="alert"> ' . $error . ' </div>';
+} else {
+    echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>');
+}
+
+?>
+
+    <? echo form_open('register/loginWithOwnApp'); ?>
         <h2 class="text-center">Sign in</h2>
         <div class="form-group">
         	<div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                <span class="input-group-addon" style="margin: auto;padding-right:5px;"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" name="username" placeholder="อีเมล์ของคุณ" required="required">
             </div>
         </div>
 		<div class="form-group">
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                <span class="input-group-addon" style="margin: auto;padding-right:5px;"><i class="fa fa-lock"></i></span>
+                <input type="password" class="form-control" name="password" placeholder="รหัสผ่าน" required="required">
             </div>
         </div>
+
         <div class="form-group">
-            <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
+            <button type="submit" class="btn btn-primary login-btn btn-block">เข้าสู่ระบบ</button>
         </div>
         <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="#" class="pull-right">Forgot Password?</a>
+
+            <a href="#" class="pull-right">ลืมรหัสผ่าน?</a>
         </div>
 		<div class="or-seperator"><i>or</i></div>
-        <p class="text-center">Login with your social media account</p>
+        <p class="text-center">เข้าสู่ระบบด้วย facebook</p>
         <div class="text-center social-btn">
-            <a href="#" class="btn btn-primary"><i class="fab fa-facebook-f"></i>&nbsp; Facebook</a>
-            <a href="#" class="btn btn-info"><i class="fab fa-twitter"></i>&nbsp; Twitter</a>
-			<a href="#" class="btn btn-danger"><i class="fab fa-google"></i>&nbsp; Google</a>
+
+
+            <a href="#" class="btn btn-primary btn-social btn-facebook"><span class="fa fa-facebook"></span>&nbsp; Facebook</a>
         </div>
     </form>
-    <p class="text-center text-muted small">Don't have an account? <a href="#">Sign up here!</a></p>
+    <p class="text-center text-muted small"><a href="#">เข้าระบบไม่ได้ใช้ใหม สมัครสมาชิกด้านซ้ายเลยคะ</a></p>
 </div>

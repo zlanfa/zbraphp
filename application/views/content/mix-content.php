@@ -3,40 +3,42 @@
 function generateData($item)
 {
 
-    echo '<td>' .
-    '<div class="card border-success mb-3" style="max-width: 18rem;">' .
-    '<div class="card-header bg-transparent border-success">' .
-    '    <img src="' . base_url() . '/assets/images/avatar.png" alt="" width="30px" height="30px" />' .
-    '    <b>' . $item->fullname . '</b>' .
-    '</div>' .
-    '<div class="card-body text-success">' .
-    '<a href="' . base_url() . index_page() . '/home/product/' . $item->postID . '" >' .
-    '    <img src="' . base_url() . '/assets/images/goods/a1.png" alt=""  />' .
-    '    <h5 class="card-title text-dark">' . $item->postHeader . '</h5>' .
-    '    <p class="card-text text-dark">' . substr($item->postBody, 0, 500) . '</p>' .
-    '</a>' .
-    '</div> ' .
-    '<div class="card-footer bg-transparent border-success"> ' .
-    ' <button onclick="addWatchlist(' . $item->postID . ',this)"> ' .
-        '       <i class="fa fa-copy"></i> ' .
-        '       add watchlist ' .
-        '   </button> ' .
-        ' <button> ' .
-        '       <i class="fa fa-comments"></i> ' .
-        '       chat now ' .
-        '   </button> ' .
-        '</div> ' .
-        '</div> ' .
-        '</td> ';
+    echo '<td style="cursor:pointer" onclick="goProduct(' . $item->postID . ')"> ' .
+    ' <div class="panel panel-default" style="max-width:300px"> ' .
+    ' <div class="panel-heading clearfix"> ' .
+    '    <img src="' . base_url() . 'assets/images/avatar.png" alt="" style="width:30px;height:30px;float:left;"> ' .
+    '    <h3 class="panel-title" style="float:left;margin-left:15px;">' . $item->fullname . '</h3> ' .
+    ' </div> ' .
+    ' <div class="panel-body" > ' .
+    '    <img src="' . base_url() . 'assets/images/goods/a1.png" alt="" style="width:250px"  /></br> ' .
+    '    <b style="margin-top:10px">' . $item->postHeader . '</b> ' .
+    '    <p>' . substr($item->postBody, 0, 500) . '</p> ' .
+    ' </div> ' .
+    ' <div class="panel-footer" style="text-align:right;" > ' .
+    '    <small> ' .
+    '        <button class="btn btn-success" onclick="addWatchlist(' . $item->postID . ',this)" > ' .
+        '            <span class="glyphicon glyphicon-copy"></span> เก็บไว้ ' .
+        '        </button> ' .
+        '        <button class="btn btn-warning"> ' .
+        '            <span class="glyphicon glyphicon-phone"></span> แซทกับผู้ขาย ' .
+        '        </button> ' .
+        '    </small> ' .
+        ' </div> ' .
+        ' </div> ' .
+        ' </td>';
+
 }
 
 ?>
 
-<div class="container mt-5">
-    <h2>New Arrivals</h2>
+<div class="container" style="margin-top:20px;">
+    <div class="x_title">
+        <h2>สินค้าคละประเภทมาใหม่</h2>
+    </div>
+    <div>
 	<table class="table">
+    <?php
 
-		<?php
 $index = 0;
 foreach ($posts as $key => $value) {
     if ($index % 4 == 0) {
@@ -47,12 +49,15 @@ foreach ($posts as $key => $value) {
         generateData($value);
     }
 }
+
 ?>
 
 
-	</table>
+    </table>
+</div>
+
 	<nav aria-label="Page navigation example">
-		<ul class="pagination justify-content-end">
+		<ul class="pagination justify-content-end pagination-sm">
 			<li class="page-item disabled">
 				<a class="page-link" href="#" tabindex="-1">Previous</a>
 			</li>
@@ -78,7 +83,7 @@ foreach ($posts as $key => $value) {
 //control this page
     function addWatchlist(id,btn_obj){
         //set inner html button to spinner
-        btn_obj.innerHTML = '<i class="fa fa-spinner fa-spin"></i> add watchlist';
+        btn_obj.innerHTML = '<i class="fa fa-spinner fa-spin"></i> เก็บไว้';
 
         var url = 'apiproduct/addwatchlist/' + id;
 
@@ -89,7 +94,7 @@ foreach ($posts as $key => $value) {
                 //finish and success set class button to success
                 btn_obj.style.borderColor = 'green';
                 //set innerHTML back to last image
-                btn_obj.innerHTML = '<i class="fa fa-copy"></i> add watchlist';
+                btn_obj.innerHTML = '<span class="glyphicon glyphicon-copy"></span> เก็บไว้ ';
             }
             return true;
         });
@@ -97,6 +102,11 @@ foreach ($posts as $key => $value) {
         return false;
 
 
+    }
+
+    //function send product
+    function goProduct(page){
+        window.location = "<?=base_url() . index_page()?>/home/product/"+ page;
     }
 
 </script>

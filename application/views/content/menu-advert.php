@@ -1,60 +1,51 @@
+<div class="clearfix"></div>
 <div class="container">
     <div class="row">
-        <div class="col">
-            <div class="row">
-                <div class="col-sm-4 col-md-3 sidebar">
-            <div class="mini-submenu">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </div>
+        <div class="col-md-3">
             <div class="list-group">
-                <span href="#" class="list-group-item active bg-success" style="border-color:green;">
-                    แนะนำ
-                </span>
+                <a href="#" class="list-group-item list-group-item-success">
+                    <span class="glyphicon glyphicon-camera"></span> สินค้ายอดนิยม <span class="badge">7</span>
+                </a>
                 <?php foreach ($categories as $it) {?>
                 <a href="/<?=$it->categoryID?>" class="list-group-item">
-                    <i class="fa fa-comment-o"></i> <?=$it->categoryName?>
+                    <span class="glyphicon glyphicon-file"></span> <?=$it->categoryName?>
                 </a>
                 <?php }?>
-
             </div>
         </div>
-        <div class="col">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div style="background-color:#CCC;width:100%;height:500px;"></div>
-                    <img class="d-block w-100" src="..." alt="First slide"  />
+        <div class="col-md-9">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="<?=base_url()?>assets/images/sliders/slider01.jpg" alt="First Slide">
+                    </div>
+                    <div class="item">
+                        <img src="<?=base_url()?>assets/images/sliders/slider03.jpg" alt="Second Slide">
+                    </div>
+                    <div class="item">
+                        <img src="<?=base_url()?>assets/images/sliders/slider03.jpg" alt="Third Slide">
+                    </div>
                 </div>
-                <div class="carousel-item">
-                <div style="background-color:#CCC;width:100%;height:500px;"></div>
-                <img class="d-block w-100" src="..." alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                <div style="background-color:#CCC;width:100%;height:500px;"></div>
-                <img class="d-block w-100" src="..." alt="Third slide">
-                </div>
+                <!-- Carousel controls -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col">
-        <div style="background-color:#CCC;width:100%;height:150px;"></div>
-            <img src="#" alt="advert2" />
-        </div>
-        <div class="col">
-        <div style="background-color:#CCC;width:100%;height:150px;"></div>
-            <img src="#" alt="advert3" />
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+     $("#myCarousel").carousel();
+});
+</script>

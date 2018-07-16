@@ -1,7 +1,7 @@
-<div class="container mt-4">
-
+<div class="container-fluid"style="background-color:#EAFAF1;margin-top:30px;">
+<div class="container" style="margin:20px 10px;padding-left:20px;">
 	<div class="row">
-		<div class="col p-5">
+		<div class="col-md-4">
 			<div class="row">
 				<img src="<?php echo base_url(); ?>assets/images/logo.png" alt="logo" />
 			</div>
@@ -9,11 +9,13 @@
 				<p>Contact Sale support Directly : <br/> 083-048-6623 (Teepop)</p>
 			</div>
 			<div class="row">
-				65/352 M.4 Bangsrimuang MuangNonthaburi Nonthaburi province 11000
+				<p>65/352 M.4 Bangsrimuang MuangNonthaburi</br>
+				 Nonthaburi province </br>
+				 11000</p>
 			</div>
 
 		</div>
-		<div class="col p-5">
+		<div class="col-md-4">
 			<h2>Link Website</h2>
 			<ul>
 				<li>
@@ -31,7 +33,7 @@
 			</ul>
 
 		</div>
-		<div class="col p-5">
+		<div class="col-md-4">
 			<h2>Download Mobile Application</h2>
 			<ul>
 				<li>
@@ -44,7 +46,7 @@
 		</div>
 
 	</div>
-
+</div>
 </div>
 
 
