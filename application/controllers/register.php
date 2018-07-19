@@ -1,10 +1,26 @@
 <?php
 
+use Facebook\Facebook;
+
 class register extends CI_Controller
 {
 
     private function loadDefaultPage($data)
     {
+		
+		
+        $fb = new Facebook([
+            'app_id' => '1053836824730928',
+            'app_secret' => 'f5644da2d236eef8d4a72c46f53df9ce',
+            'default_graph_version' => 'v2.2',
+        ]);
+
+        $helper = $fb->getRedirectLoginHelper();
+
+        $permissions = ['email']; // Optional permissions
+        $loginUrl = $helper->getLoginUrl(base_url() . index_page(). 'home', $permissions);
+        
+        $data['facebook'] = htmlspecialchars($loginUrl);
         //go to page register
         $this->load->view('header/header', $data, false); //load header
         $this->load->view('authen/register', $data, false);
