@@ -83,5 +83,50 @@ class Posts_model extends CI_Model
         }
         return null;
     }
+	
+	
+	 /*
+    save post data not image 
+    */
+    public function insert_post($header,$body,$price,$condition,$warranty,$deliveryMode,$description,$userid){
+        $data = array(
+            'postHeader' => $header,
+            'postBody' => $body,
+            'postPrice' => $price,
+            'postCondition' => $condition,
+            'postDeliveryMode' => $deliveryMode,
+            'postDescription' => $description,
+            'status' => 1,
+            'dateCreate' => date('Y-m-d H:i:s'),
+            'dateUpdate' => date('Y-m-d H:i:s'),
+            'userID' => $userid,
+        );
+        $this->db->insert($this->tableName,$data);
+    }
+
+    /*
+    save image post from post id
+    */
+    public function insert_post_image($postID,$postImage){
+        $data = array(
+            'postID' => $postID,
+            'postLink' => $postImage,
+            'status' => 1,
+            'dateCreate' => date('Y-m-d H:i:s'),
+        );
+        $this->db->insert($this->tableNameImage,$data);
+    }
+
+    /*
+    update rearrange post image
+    */
+    public function update_post_rearrange($postID,$index){
+        $this->db->set('postRearrange',$index);
+        $this->db->where('postID',$postID);
+        $this->db->update($this->tableNameImage);
+    }
+	
+	
+	
 
 }
